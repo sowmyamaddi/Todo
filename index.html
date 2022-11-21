@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body{
+			background-image:url("https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80");
+			background-repeat: no-repeat;
+			background-size:100%;	
+		}
+		#user{
+	    	background-color:rgba(255, 255, 255, 0.7);
+			border-radius:20px 30px;
+			border-color:rgba(0, 0, 0, 0.6);
+			text-align:center;
+			margin-left:20%;
+			margin-top:13%;
+			font-size:20px;
+			margin-bottom:5%;
+			padding: 1%;
+		}
+		#on{
+			background-color:rgba(255, 255, 255, 0.5);
+			border-radius:20px 30px;
+			border-color:rgba(0, 0, 0, 0.6);
+			margin-left:40%;
+			font-size:18px;
+			margin-bottom: 10%;
+			padding:1% 3%;
+		}
+		.span{
+			border: 1px solid white;
+			margin:20% 37% 10% 37%;
+			background-color:#7252w;
+			border-radius: 0.8rem 3rem;
+
+		}
+	</style>
+	<script src="https://kit.fontawesome.com/ea6d4fec5e.js" croosorigin="anonymous"></script>
+	<script type="text/javascript">
+		function submit(){
+		let userName=document.getElementById("user").value
+		console.log(userName)
+		document.getElementById("user").value=""
+		document.getElementById("todo")
+		if(userName===""){
+			alert("enter a todo")
+		}
+		else{
+			newTodo(userName)
+		}
+	}
+		function newTodo(todo){
+			const d=new Date();
+			let ul=document.querySelector("ul")
+			let li=document.createElement("li")
+			li.innerHTML=`
+			<span class="listitems">${todo} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}:${d.getMonth()}</span>
+			<i class="fa-solid fa-rectangle-xmark"><i>`
+			li.classList.add("list-type")
+			ul.appendChild(li)
+		}
+	</script>
+</head>
+<body>
+	<section class="span">
+	<input id="user" value="" placeholder="Enter your name" width="40%"/>
+	<ul>
+
+	</ul>
+	<button  id="on"onClick="submit()">Submit</button>
+	</section>
+
+</body>
+</html>
